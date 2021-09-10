@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+//Общие стили
+html, body
+  font-family: 'Montserrat', sans-serif
+  font-size: 16px
+  margin: 0;
+  padding: 0;
+
+ul
+  margin: 0
+  padding: 0
+  li
+    list-style-type: none
+    a
+      text-decoration: none
+
+h2
+  text-align: center
+
+.container
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  max-width: 1420px
+  padding: 0 1rem
+  margin: 0 auto
+
+.row
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  align-items: center
+  &_header
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+
+.column
+  display: flex 
+  flex-flow: column wrap
+  justify-content: center
+  align-items: center
+
+.header-menu
+  position: fixed
+  width: 100%
+  padding-top: 20px
+  padding-bottom: 20px
+  left: 0
+  right: 0
+  margin:auto
+  background-color: white
+
+.card
+  &:nth-child(1)
+    padding-top: 50px
+
+.post
+  &__content
+    width: 20rem
+    height: 20rem
+    border: 2px solid black
+    margin: 0 auto
+
+.cube
+  width: 5rem
+  height: 5rem
+  background-color: black
+  margin: 5px
+  &_up //главная ось - горизонталь, второстепенная ось - вертикаль
+    width: 2rem
+    min-height: 10rem
+    max-height: 25rem
+    background-color: black
+    margin: 0 5px
+  &_bottom //главная ось - вертикаль, второстепенная ось - горизонталь
+    max-width: 25rem
+    min-width: 10rem
+    height: 2rem
+    background-color: black
+    margin: 5px 0
+
+.block
+  width: 7rem
+  height: 7rem
+
+.pad
+  &_up
+    width: 7rem
+    min-height: 7rem
+    max-height: 25rem
+  &_bottom
+    height: 7rem
+    min-width: 7rem
+    max-width: 25rem
+
+.shrink
+  &-row
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    width: 20rem
+    height: 20rem
+  &-column
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    width: 20rem
+    height: 20rem
+
+.content
+  &-row
+    display: flex
+    flex-flow: row wrap
+    margin: 0 auto
+    width: 20rem
+    height: 20rem
+  &-column
+    display: flex
+    flex-flow: column wrap
+    margin: 0 auto
+    width: 20rem
+    height: 20rem
+
+/*For Align-self*/
+.self
+  &:nth-child(2) //Применяю свойства к 2 элементу
+    // Свойство align-self - управляет выравниванием конкретного flex элемента по поперечной (второстепенной) оси  в пределах области контерйнера, в котором он задан.
+    // значение по умолчанию: auto / указывать самому не нужно. auto - берёт родительское значение align-items 
+    // или если нет родителя принимает значение stretch (занимает все свободное пространство контейнера по поперечной оси
+    // align-self: flex-start // выбранный элемент выравнивается к началу поперечной оси
+    // align-self: center // выбранный элемент выравнивается к центру (середине) поперечной оси
+    // align-self: flex-end // выбранный элемент выравнивается к концу поперечной оси
+    // align-self: baseline // выбранный элемент выравнивается по базовой линии текста (то есть располагается на уровне первой строки в контейнере).   
+    align-self: stretch // выбранный элемент растягивается таким образом, чтобы занять всё свободное пространство контейнера по поперечной оси.
+  
+/*For Align-content*/
+.content
+  //Свойство align-content - задаёт тип выравнивания строк внутри flex контейнера по поперечной (второстепенной) оси при наличии свободного пространства.
+  //Значение по умолчанию: stretch
+  //Данное свойство отличается от align-items тем, что align-content определяет расстояние между строками, а align-items определяет как элементы в целом выровнены внутри контейнера. Когда есть только одна строка, align-content не работает
+  // align-content: flex-start // Строки располагаются в начале поперечной оси. Каждая следующая строка идёт вровень с предыдущей.
+  align-content: center // Строки располагаются по центру контейнера.
+  // align-content: flex-end // Строки располагаются начиная с конца поперечной оси. Каждая предыдущая строка идёт вровень со следующей.
+  // align-content: space-between // Строки равномерно распределяются в контейнере и расстояние между ними одинаково.
+  // align-content: space-around // Строки равномерно распределяются таким образом, чтобы пространство между двумя соседними строками было одинаковым. Пустое пространство перед первой строкой и после последней строки равно половине пространства между двумя соседними строками.
+  // align-content: space-evenly // Строки распределяются равномерно. Пустое пространство перед первой строкой и после последней строки имеет ту же ширину, что и у других строк.
+  align-content: stretch // Строки равномерно растягиваются, заполняя свободное пространство.
+
+/*For Flex-shrink*/
+.shrink
+  &:nth-child(2) //Применяю свойства к 2 элементу
+    // Свойство применяется только в том случае, если размер элементов в флекс-контейнере вызывает переполнение флекс-контейнера
+    // Свойство flex-shrink задает коэффициент сжатия flex с заданным числом. Отрицательное значение не валидно.
+    // Значение по умолчанию: 1.
+    flex-shrink: 4 // второй элемент сжат в два раза по сравнению с другими
+
+/*For Flex-basis*/
+.basis
+  &:nth-child(2) //Применяю свойства к 2 элементу
+    // Свойство flex-basis задаёт базовый размер флекс элемента по основной оси. Похоже на свойства width и height, к которым добавляется содержимое элемента.
+    // Значение по умолчанию: auto (берет размеры из width и height)
+    flex-basis: 20px //начальный размер для второго элемента
+
+
+

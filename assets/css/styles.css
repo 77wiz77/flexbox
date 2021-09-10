@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  max-width: 1420px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.row_header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-menu {
+  position: fixed;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+.card:nth-child(1) {
+  padding-top: 50px;
+}
+
+.post__content {
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+
+.cube {
+  width: 5rem;
+  height: 5rem;
+  background-color: black;
+  margin: 5px;
+}
+
+.cube_up {
+  width: 2rem;
+  min-height: 10rem;
+  max-height: 25rem;
+  background-color: black;
+  margin: 0 5px;
+}
+
+.cube_bottom {
+  max-width: 25rem;
+  min-width: 10rem;
+  height: 2rem;
+  background-color: black;
+  margin: 5px 0;
+}
+
+.block {
+  width: 7rem;
+  height: 7rem;
+}
+
+.pad_up {
+  width: 7rem;
+  min-height: 7rem;
+  max-height: 25rem;
+}
+
+.pad_bottom {
+  height: 7rem;
+  min-width: 7rem;
+  max-width: 25rem;
+}
+
+.shrink-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
+}
+
+.shrink-column {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
+}
+
+.content-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  width: 20rem;
+  height: 20rem;
+}
+
+.content-column {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0 auto;
+  width: 20rem;
+  height: 20rem;
+}
+
+/*For Align-self*/
+.self:nth-child(2) {
+  align-self: stretch;
+}
+
+/*For Align-content*/
+.content {
+  align-content: center;
+  align-content: stretch;
+}
+
+/*For Flex-shrink*/
+.shrink:nth-child(2) {
+  flex-shrink: 4;
+}
+
+/*For Flex-basis*/
+.basis:nth-child(2) {
+  flex-basis: 20px;
+}
+/*# sourceMappingURL=styles.css.map */

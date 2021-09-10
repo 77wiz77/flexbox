@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examples for Flexbox</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul id="header-menu" class="header-menu container row_header">
+        <li><a href="#self" class="header-menu__item">Align-self</a></li>
+        <li><a href="#content" class="header-menu__item">Align-content</a></li>
+        <li><a href="#shrink" class="header-menu__item">Flex-shrink</a></li>
+        <li><a href="#basis" class="header-menu__item">Flex-basis</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card container">
+      <h2>Примечание</h2>
+      <p>
+        Ниже указаны CSS свойства align-self, align-content, flex-shrink, flex-basis. <br>
+        Для каждого свойства указано 2 примера: в первом основной осью является горизонталь, во втором основной осью является вертикаль. <br>
+        Посмотреть, как они влияют с теми или иными параметрами можно в файле assets/css/styles.sass, раскомментив нужный параметр.
+      </p>
+    </section>
+    <section id="self" class="card container">
+      <div class="post">
+        <h2>Align-self</h2>
+        <p>
+          Свойство align-self - управляет выравниванием конкретного flex элемента по поперечной (второстепенной) оси  в пределах области контерйнера, в котором он задан.<br>
+          Значение по умолчанию: auto / указывать самому не нужно.<br>
+          Auto - берёт родительское значение align-items или если нет родителя принимает значение stretch (занимает все свободное пространство контейнера по поперечной оси <br>
+          align-self: flex-start // выбранный элемент выравнивается к началу поперечной оси <br>
+          align-self: center // выбранный элемент выравнивается к центру (середине) поперечной оси <br>
+          align-self: flex-end // выбранный элемент выравнивается к концу поперечной оси <br>
+          align-self: baseline // выбранный элемент выравнивается по базовой линии текста (то есть располагается на уровне первой строки в контейнере). <br> 
+          align-self: stretch // выбранный элемент растягивается таким образом, чтобы занять всё свободное пространство контейнера по поперечной оси.
+        </p>
+        <h3>Пример 1 (свойство align-self: stretch применяется к второму элементу (по центру))</h3>
+        <div class="post__content row">
+          <div class="cube_up self"></div>
+          <div class="cube_up self"></div>
+          <div class="cube_up self"></div>
+        </div>
+      </div>
+      <div class="post">
+        <h3>Пример 2 (свойство align-self: stretch применяется к второму элементу (по центру))</h3>
+        <div class="post__content column">
+          <div class="cube_bottom self"></div>
+          <div class="cube_bottom self"></div>
+          <div class="cube_bottom self"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" class="card container">
+      <div class="post">
+        <h2>Align-content</h2>
+        <p>
+          Свойство align-content - задаёт тип выравнивания строк внутри flex контейнера по поперечной (второстепенной) оси при наличии свободного пространства. <br>
+          Значение по умолчанию: stretch <br>
+          Данное свойство отличается от align-items тем, что align-content определяет расстояние между строками, а align-items определяет как элементы в целом выровнены внутри контейнера. Когда есть только одна строка, align-content не работает <br>
+          align-content: flex-start // Строки располагаются в начале поперечной оси. Каждая следующая строка идёт вровень с предыдущей.<br>
+          align-content: center // Строки располагаются по центру контейнера.<br>
+          align-content: flex-end // Строки располагаются начиная с конца поперечной оси. Каждая предыдущая строка идёт вровень со следующей.<br>
+          align-content: space-between // Строки равномерно распределяются в контейнере и расстояние между ними одинаково.<br>
+          align-content: space-around // Строки равномерно распределяются таким образом, чтобы пространство между двумя соседними строками было одинаковым. Пустое пространство перед первой строкой и после последней строки равно половине пространства между двумя соседними строками.<br>
+          align-content: space-evenly // Строки распределяются равномерно. Пустое пространство перед первой строкой и после последней строки имеет ту же ширину, что и у других строк.<br>
+          align-content: stretch // Строки равномерно растягиваются, заполняя свободное пространство.
+        </p>
+        <h3>Пример 1 (свойство align-content: stretch применяется ко всем элементам)</h3>
+        <div class="post__content row">
+          <div class="content-row content">
+            <div class="pad_up" style="background-color:coral;"></div>
+            <div class="pad_up" style="background-color:lightblue;"></div>
+            <div class="pad_up" style="background-color:khaki;"></div>
+            <div class="pad_up" style="background-color:pink;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="post">
+        <h3>Пример 2 (свойство align-content: stretch применяется ко всем элементам)</h3>
+        <div class="post__content column">
+          <div class="content-column content">
+            <div class="pad_bottom" style="background-color:coral;"></div>
+            <div class="pad_bottom" style="background-color:lightblue;"></div>
+            <div class="pad_bottom" style="background-color:khaki;"></div>
+            <div class="pad_bottom" style="background-color:pink;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shrink" class="card container">
+      <div class="post">
+        <h2>Flex-shrink</h2>
+        <p>
+          Свойство применяется только в том случае, если размер элементов в флекс-контейнере вызывает переполнение флекс-контейнера<br>
+          Свойство flex-shrink задает коэффициент сжатия flex с заданным числом. Отрицательное значение не валидно.<br>
+          Значение по умолчанию: 1.<br>
+        </p>
+        <h3>Пример 1 (свойство flex-shrink: 4 применяется к второму элементу (синий))</h3>
+        <div class="post__content">
+          <div class="shrink-row">
+            <div class="block" style="background-color:coral;"></div>
+            <div class="block shrink" style="background-color:lightblue;"></div>
+            <div class="block" style="background-color:khaki;"></div>
+            <div class="block" style="background-color:pink;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="post">
+        <h3>Пример 2 (свойство flex-shrink: 4 применяется к второму элементу (синий))</h3>
+        <div class="post__content">
+          <div class="shrink-column">
+            <div class="block" style="background-color:coral;"></div>
+            <div class="block shrink" style="background-color:lightblue;"></div>
+            <div class="block" style="background-color:khaki;"></div>
+            <div class="block" style="background-color:pink;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="basis" class="card container">
+      <div class="post">
+        <h2>Flex-basis</h2>
+        <p>
+          Свойство flex-basis определяет основу флекса, которая является начальным размером элемента. Похоже на свойства width и height, к которым добавляется содержимое элемента.<br>
+          Значение по умолчанию: auto (берет размеры из width и height)
+        </p>
+        <h3>Пример 1 (свойство flex-basis: 20px применяется к второму элементу)</h3>
+        <div class="post__content row">
+          <div class="cube_up basis"></div>
+          <div class="cube_up basis"></div>
+          <div class="cube_up basis"></div>
+        </div>
+      </div>
+      <div class="post">
+        <h3>Пример 2 (свойство flex-basis: 20px применяется к второму элементу)</h3>
+        <div class="post__content column">
+          <div class="cube_bottom basis"></div>
+          <div class="cube_bottom basis"></div>
+          <div class="cube_bottom basis"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="assets/js/archor.js"></script>
+</body>
+</html>
